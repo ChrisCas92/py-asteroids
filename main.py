@@ -3,6 +3,7 @@
 # throughout this file
 import pygame
 from constants import *
+from player import Player
 
 
 def main():
@@ -13,10 +14,13 @@ def main():
             if event.type == pygame.QUIT:
                 return
         pygame.Surface.fill(screen, (0, 0, 0))
-    pygame.display.flip()  # Update the display
-    #print("Starting Asteroids!")
-    #print(f"Screen width: {SCREEN_WIDTH}")
-    #print(f"Screen height: {SCREEN_HEIGHT}")
+        player.draw(screen)  # Draw the player on the screen
+        pygame.display.flip()  # Update the display
     
+player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)  # Create a player instance at the center of the screen
+
+    
+
+
 if __name__ == "__main__":
     main()
